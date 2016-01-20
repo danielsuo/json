@@ -2,9 +2,13 @@ cmake_minimum_required(VERSION 2.8)
 
 project(json CXX)
 
-add_executable(json_unit
-    src/json.hpp test/catch.hpp test/unit.cpp
-)
+# add_executable(json_unit
+#     src/json.hpp test/catch.hpp test/unit.cpp
+# )
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+# add_library(json src/json.hpp)
+SET_TARGET_PROPERTIES(json PROPERTIES LINKER_LANGUAGE CXX)
 
 if(MSVC)
     set(CMAKE_CXX_FLAGS
